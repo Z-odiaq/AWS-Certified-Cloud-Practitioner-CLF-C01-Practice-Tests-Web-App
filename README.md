@@ -23,7 +23,7 @@ The quiz questions used in this project are taken from [Ditectrev's AWS Certifie
 
     ```bash
     git clone https://github.com/Z-odiaq/AWS-Certified-Cloud-Practitioner-CLF-C01-Practice-Tests-Web-App.git
-    cd aws-quiz-web-app
+    cd AWS-Certified-Cloud-Practitioner-CLF-C01-Practice-Tests-Web-App
     ```
 
 2. Run the Flask application:
