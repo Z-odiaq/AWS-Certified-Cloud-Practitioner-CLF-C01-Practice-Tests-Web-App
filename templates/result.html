@@ -1,0 +1,104 @@
+<!-- templates/result.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Result</title>
+    <!-- Add Bootstrap CDN link -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f8f8;
+            margin: 20px;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+            margin-top: 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Add styles for correct and incorrect answers */
+        .correct-answer {
+            color: green;
+            font-weight: bold;
+        }
+
+        .incorrect-answer {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Quiz Result</h1>
+        <p>Your Score: {{ score }} / {{ total }}</p>
+
+        {% if incorrect_answers %}
+        <h2>Incorrect Answers</h2>
+        <ul>
+            {% for question_index, data in incorrect_answers.items() %}
+            <li>
+                <p>{{ question_index + 1 }}. {{ paginated_questions[current_page-1][question_index]['question'] }}</p>
+                <p> Correct Answer(s):</p>
+                <p>
+                    {% for index in data['correct_choices'] %}
+                    <span class="correct-answer">{{ paginated_questions[current_page-1][question_index]['choices'][index]['text'] }}</span>
+                    {% if not loop.last %} <br>
+                    {% endif %}
+                    {% endfor %}
+                </p>
+                <p>Your Answer(s):</p>
+                <p>
+                    {% for index in data['user_choices'] %}
+                    <span class="incorrect-answer">{{ paginated_questions[current_page-1][question_index]['choices'][index]['text'] }}</span>
+                    {% if not loop.last %} <br>
+                    {% endif %}
+                    {% endfor %}
+                </p>
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+
+    <!-- Add Bootstrap JS and Popper.js CDN links -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

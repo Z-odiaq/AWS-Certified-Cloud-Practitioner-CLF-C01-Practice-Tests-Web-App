@@ -1,0 +1,121 @@
+<!-- templates/quiz.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Page</title>
+    <!-- Add Bootstrap CDN link -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f8f8;
+            margin: 20px;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        form {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .question-container {
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .question {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .choices label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .choices input {
+            margin-right: 8px;
+        }
+
+        .choices hr {
+            border: 0;
+            height: 1px;
+            background: #ddd;
+            margin-bottom: 20px;
+        }
+
+        .bg-light {
+            background-color: #f8f9fa !important;
+        }
+
+        .bg-white {
+            background-color: #fff !important;
+        }
+
+        .pagination {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Quiz Questions - Page {{ current_page }} of {{ total_pages }}</h1>
+
+        <nav aria-label="Page navigation" class="pagination">
+            <ul class="pagination">
+                {% if current_page > 1 %}
+                <li class="page-item"><a class="page-link" href="{{ url_for('show_page', page_number=current_page-1) }}">Previous</a></li>
+                {% endif %}
+                {% for page in range(1, total_pages + 1) %}
+                <li class="page-item {% if page == current_page %}active{% endif %}"><a class="page-link" href="{{ url_for('show_page', page_number=page) }}">{{ page }}</a></li>
+                {% endfor %}
+                {% if current_page < total_pages %}
+                <li class="page-item"><a class="page-link" href="{{ url_for('show_page', page_number=current_page+1) }}">Next</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+
+        <form action="{{ url_for('submit', page_number=current_page) }}" method="post">
+            {% for question in questions %}
+            <div class="question-container {% if loop.index is odd %}bg-light{% else %}bg-white{% endif %}">
+                {% set question_number =  loop.index %}
+                <p class="question">{{ question_number  }} - {{ question['question'] }}</p>
+                <div class="choices">
+                    {% for choice in question['choices'] %}
+                    <label>
+                        <input type="checkbox" name="{{ question_number-1 }}" value="{{ loop.index-1 }}"> {{ choice['text'] }}
+                    </label>
+                    <br>
+                    {% endfor %}
+                    <hr>
+                </div>
+            </div>
+            {% endfor %}
+            <button type="submit" class="btn btn-success" >Submit</button>
+        </form>
+    </div>
+
+    <!-- Add Bootstrap JS and Popper.js CDN links -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
