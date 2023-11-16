@@ -22,7 +22,7 @@ The quiz questions used in this project are taken from [Ditectrev's AWS Certifie
 1. Clone this repository:
 
     ```bash
-    git clone https://github.com/your-username/aws-quiz-web-app.git
+    git clone https://github.com/Z-odiaq/AWS-Certified-Cloud-Practitioner-CLF-C01-Practice-Tests-Web-App.git
     cd aws-quiz-web-app
     ```
 
