@@ -1,10 +1,10 @@
 # AWS Certified Cloud Practitioner CLF-C01 Practice Tests Web App
 
-This web application allows users to take quizzes based on Amazon Web Services (AWS) Certified Cloud Practitioner questions. The quiz questions are sourced from [Ditectrev's AWS Certified Cloud Practitioner Practice Tests](https://github.com/Ditectrev/Amazon-Web-Services-AWS-Certified-Cloud-Practitioner-CLF-C01-Practice-Tests-Exams-Questions-Answers).
+This is a web application that allows you to take quizzes based on Amazon Web Services (AWS) Certified Cloud Practitioner questions. The quiz questions are sourced from [Ditectrev's AWS Certified Cloud Practitioner Practice Tests](https://github.com/Ditectrev/Amazon-Web-Services-AWS-Certified-Cloud-Practitioner-CLF-C01-Practice-Tests-Exams-Questions-Answers).
 
 ## Introduction
 
-This project provides a simple Flask web application that presents multiple-choice quiz questions. Users can submit their answers, and the application will provide a score along with feedback on incorrect answers.
+This project provides a simple Flask web application that presents multiple-choice quiz questions. Users can submit their answers to see the score along with feedback on incorrect answers.
 
 ## Data Source
 
