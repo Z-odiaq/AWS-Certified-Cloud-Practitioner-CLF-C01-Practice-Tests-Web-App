@@ -64,6 +64,8 @@
 
 <body>
     <div class="container">
+        <a class="btn btn-primary" href="{{ url_for('index') }}">Go Back</a>
+
         <h1>Quiz Result</h1>
         <p>Your Score: {{ score }} / {{ total }}</p>
 
@@ -94,6 +96,8 @@
             {% endfor %}
         </ul>
         {% endif %}
+        <a class="btn btn-primary" href="{{ url_for('index') }}">Go Back</a>
+
     </div>
 
     <!-- Add Bootstrap JS and Popper.js CDN links -->
