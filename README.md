@@ -5,6 +5,7 @@ This is a web application that allows you to take quizzes based on Amazon Web Se
 ## Introduction
 
 This project provides a simple Flask web application that presents multiple-choice quiz questions. Users can submit their answers to see the score along with feedback on incorrect answers.
+**Link hosted in pythonanywhere (unstable) : http://zodiaq.pythonanywhere.com/**
 
 ## Data Source
 
