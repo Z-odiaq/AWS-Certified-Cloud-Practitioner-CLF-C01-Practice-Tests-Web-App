@@ -68,6 +68,7 @@ def submit(page_number):
     paginated_questions = paginate_questions(questions)
     score = 0
     incorrect_answers = {}
+    page_number = 1 if page_number == 0 else page_number
 
     for i, question in enumerate(paginated_questions[page_number -1]):
         correct_choice_indices = [index for index, choice in enumerate(question['choices']) if choice['is_correct']]

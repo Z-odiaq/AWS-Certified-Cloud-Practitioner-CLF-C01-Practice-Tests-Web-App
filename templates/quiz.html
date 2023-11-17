@@ -92,7 +92,8 @@
             </ul>
         </nav>
 
-        <form action="{{ url_for('submit', page_number=current_page) }}" method="post">
+
+        <form action="{{ url_for('submit', page_number=current_page|default(1)) }}" method="post">
             {% for question in questions %}
             <div class="question-container {% if loop.index is odd %}bg-light{% else %}bg-white{% endif %}">
                 {% set question_number =  loop.index %}
