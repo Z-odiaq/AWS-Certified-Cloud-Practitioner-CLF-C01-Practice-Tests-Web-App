@@ -40,3 +40,9 @@ To add more quiz questions, follow the structure in the `data.txt` file. Each qu
 
 Feel free to contribute by adding more questions and improving the application!
 
+## Screenshots
+
+![image](https://github.com/Z-odiaq/AWS-Certified-Cloud-Practitioner-CLF-C01-Practice-Tests-Web-App/assets/17526102/c30f6b9f-e0cb-4723-9a2a-ab4cc392b699)
+
+![image](https://github.com/Z-odiaq/AWS-Certified-Cloud-Practitioner-CLF-C01-Practice-Tests-Web-App/assets/17526102/e5cfdb8f-1943-4112-ae4f-1500397c2376)
+
