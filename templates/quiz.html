@@ -87,7 +87,7 @@
 
 <body>
     <div class="container">
-        <h1>Quiz Questions - Page {{ current_page }} of {{ total_pages }}</h1>
+        <h1>Quiz Questions - Page {{ 1 if current_page == 0 }} of {{ total_pages }}</h1>
 
         <nav aria-label="Page navigation" class="pagination justify-content-center">
             <ul class="pagination">
