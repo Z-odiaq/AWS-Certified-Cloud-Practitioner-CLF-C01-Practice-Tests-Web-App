@@ -43,7 +43,9 @@ Feel free to contribute by adding more questions and improving the application!
 
 ## Screenshots
 
-![image](https://github.com/Z-odiaq/AWS-Certified-Cloud-Practitioner-CLF-C01-Practice-Tests-Web-App/assets/17526102/c30f6b9f-e0cb-4723-9a2a-ab4cc392b699)
+![image](https://github.com/Z-odiaq/AWS-Certified-Cloud-Practitioner-CLF-C01-Practice-Tests-Web-App/assets/17526102/57e1bf06-c41e-4dd3-9960-446954508a20)
 
-![image](https://github.com/Z-odiaq/AWS-Certified-Cloud-Practitioner-CLF-C01-Practice-Tests-Web-App/assets/17526102/e5cfdb8f-1943-4112-ae4f-1500397c2376)
+
+![image](https://github.com/Z-odiaq/AWS-Certified-Cloud-Practitioner-CLF-C01-Practice-Tests-Web-App/assets/17526102/b43a60e4-5d9f-456c-af93-bd24d7b9c676)
+
 
